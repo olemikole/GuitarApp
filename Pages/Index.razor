@@ -1,0 +1,86 @@
+﻿@page "/"
+@inject HttpClient Http
+
+<h2>Guitar App</h2>
+
+
+@if(_scales==null)
+{
+    <p><em>Loading...</em></p>
+}
+else{
+    <label>Key</label>
+    <select @onchange="OnKeyChanged">
+        <option></option>
+        @foreach (var item in Enum.GetValues(typeof(Note.NoteEnum)))
+        {
+            <option>
+                <td>@item.ToString().Replace("s","#")</td>
+            </option>
+        }
+    </select>
+    <label>Scale</label>
+    <select @onchange="OnScaleChanged">
+        <option></option>
+        @for (var i=0;i< _scales.Length; i++)
+        {
+            <option value=@i>
+                <td >@_scales[i].Name</td>
+            </option>
+        }
+    </select>
+    <label>Mode</label>
+    <select @onchange="OnModeChanged" >
+        @for(var i=0;i<_fretboardManager.currentScale.Count;i++)
+        {
+            <option value=@i>
+                <td>@(i+1)</td>
+            </option>
+        }
+    </select>
+
+    <Fretboard @ref="_fretboard"/>
+    <h1></h1>
+    @code{
+        FretboardManager _fretboardManager;
+        private Scale[] _scales;
+        Fretboard _fretboard;
+        
+        protected override async Task OnInitializedAsync()
+        {
+            _fretboardManager=new FretboardManager();
+            _scales = await Http.GetFromJsonAsync<Scale[]>("sample-data/scales.json");
+        }
+
+        public void OnKeyChanged(ChangeEventArgs e)
+        {
+            if((string)e.Value=="")
+            {
+                _fretboardManager.currentKey=null;
+            }
+            else
+                _fretboardManager.currentKey = (Note.NoteEnum)Enum.Parse(typeof(Note.NoteEnum), e.Value.ToString().Replace("#","s"));
+            _fretboardManager.UpdateNotes();
+            _fretboard.UpdateBoard(_fretboardManager.allNotes);
+        }
+        public void OnScaleChanged(ChangeEventArgs e)
+        {
+            if(e.Value.ToString()=="")
+            {
+                _fretboardManager.currentScale=new List<Note.NoteEnum>(){Note.NoteEnum.C};
+            }
+            else
+                _fretboardManager.currentScale =_scales[ int.Parse( e.Value.ToString() ) ].ScaleNotes;
+            _fretboardManager.currentMode=0;
+            _fretboardManager.UpdateNotes();
+            _fretboard.UpdateBoard(_fretboardManager.allNotes);
+        }
+
+        public void OnModeChanged(ChangeEventArgs e){
+            _fretboardManager.currentMode = int.Parse(e.Value.ToString());
+            _fretboardManager.UpdateNotes();
+            _fretboard.UpdateBoard(_fretboardManager.allNotes);
+        }
+
+    }
+}

@@ -1,0 +1,42 @@
+<div class=fretboard-container>
+    @foreach (var item in _notesCss)
+    {
+        <div class="note" style=@item></div>
+    }
+</div>
+
+
+
+
+
+
+@code {
+    public FretboardManager _fretboardManager;
+    List<string>  _notesCss;
+    static readonly int[] _fretPositions = {3,73-8,155-8,233-8,306-8,376-8,441-8,503-8,561-8,616-8,668-8,717-8}; 
+    static readonly int[] _stringPositions = {24,42,59,77,94,112}; 
+    
+    protected override void OnInitialized()
+    {
+        _notesCss=new List<string>();
+        for(int i=0;i<12*6;i++)
+        {
+            _notesCss.Add("");
+        }
+        base.OnInitialized();
+    }
+
+    public void UpdateBoard(Note[,] notes)
+    {
+        
+        int i=0;
+        foreach (var note in notes)
+        {
+            
+            _notesCss[i]=( $"bottom: {_stringPositions[note.GuitarString]}px;left: {_fretPositions[note.GuitarFret]}px;background-color:{note.color};border-radius: 70%" );
+            i+=1;
+        }
+        StateHasChanged();
+
+    }
+}
