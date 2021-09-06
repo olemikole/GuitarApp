@@ -195,11 +195,11 @@
       "mscorlib.dll": "sha256-9AZ7YsJz\/p2gr4E0EQXdHBqwDxoXqtzxhqC6aRsa2K8=",
       "netstandard.dll": "sha256-yOOty6BTX3e57YAEHK5a4nku\/lj0vi7jg\/eQZAjbDQk=",
       "System.Private.CoreLib.dll": "sha256-rraBQp6NevIQiELPVfDFDl5pv9QVJqCiZhB5bkpiZ88=",
-      "GuitarApp.dll": "sha256-rG0yLmtt+ETZfKmD\/JqnbzPPaCf7AiO\/52jicc8sFlE="
+      "GuitarApp.dll": "sha256-UbzZ2udvnTkAtHj8SmJ3E47SszKgO8OYCqbkfwYY8\/A="
     },
     "lazyAssembly": null,
     "pdb": {
-      "GuitarApp.pdb": "sha256-Hb53SnLKYjUVJsetxRPJWTaE42iEjEAcEQa8vTEt7r8="
+      "GuitarApp.pdb": "sha256-snLGyzpN27M3jshtE98+\/yXtY7FFi6P3zuPbcVGQgJM="
     },
     "runtime": {
       "dotnet.timezones.blat": "sha256-L2vkcKzmXJtf+J7db5TbDMBckrgqJ5qc0ZzVIdRlm0I=",

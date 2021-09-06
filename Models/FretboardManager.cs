@@ -6,12 +6,12 @@ namespace GuitarApp.Models
 {
     public class FretboardManager
     {
-        
-        public Note[,] allNotes = new Note[6,12];
-        public List<Note.NoteEnum> currentScale=new List<Note.NoteEnum>(){Note.NoteEnum.C};
-        public Note.NoteEnum? currentKey=null;
-        public int currentMode;
-        public Note.NoteEnum currentChord;
+        const int NUMBER_OF_FRETS=12;
+        public Note[,] AllNotes = new Note[Note.GuitarStrings.Length,NUMBER_OF_FRETS];
+        public List<Note.NoteEnum> CurrentScale=new List<Note.NoteEnum>(){Note.NoteEnum.C};
+        public Note.NoteEnum? CurrentKey=null;
+        public int CurrentMode;
+        public Note.NoteEnum CurrentChord;
         
         public FretboardManager()
         {
@@ -20,7 +20,7 @@ namespace GuitarApp.Models
             {
                 for(int j = 0; j < 12;j++)
                 {
-                    allNotes[i,j]=new Note(j,i);
+                    AllNotes[i,j]=new Note(j,i);
                 }
             }
         }
@@ -32,28 +32,19 @@ namespace GuitarApp.Models
         public void UpdateNotes()
         {
             List<Note.NoteEnum> scaleNotes = new List<Note.NoteEnum>();
-            if(currentKey!=null)
+            if(CurrentKey!=null)
             {
                 Console.WriteLine("Yes");
-                foreach(var note in currentScale)
+                foreach(var note in CurrentScale)
                 {
-                    Console.WriteLine($"{note} {currentKey} {currentScale[currentMode]}");
-                    scaleNotes.Add( (Note.NoteEnum)(( (int) note + (int) currentKey + (12-(int)currentScale[currentMode]))%12) );
-                    Console.WriteLine( (Note.NoteEnum)(( (int) note + (int) currentKey + (12-(int)currentScale[currentMode]))%12) );
+                    scaleNotes.Add( (Note.NoteEnum)(( (int) note + (int) CurrentKey + (12-(int)CurrentScale[CurrentMode]))%12) );
                 } 
             }
-            foreach(var note in allNotes){
+            foreach(var note in AllNotes){
                 
                 if(scaleNotes.Contains(note.NoteValue))
                 {
-                    if(note.NoteValue==currentKey)
-                    {
-                        note.color="red";
-                    }
-                    else
-                    {
-                        note.color="#0066FF";
-                    }
+                    note.color = (note.NoteValue == CurrentKey) ? "red" : "#0066FF"; 
                     
                 }
                 else
@@ -61,7 +52,6 @@ namespace GuitarApp.Models
                     note.color="transparent";
                 }
             }
-        
         }
     }
 }

@@ -22,16 +22,16 @@ namespace GuitarApp.Models
             NoteValue = (NoteEnum)(tmp%12);                   // 7%6 = 1
 
         }
-        public static (NoteEnum note,int octave)[] GuitarStrings =
-        {
-            (NoteEnum.E,4),
-            (NoteEnum.A,4),
-            (NoteEnum.D,5),
-            (NoteEnum.G,5),
-            (NoteEnum.B,5),
-            (NoteEnum.E,6)
-        };
 
+            public static (Note.NoteEnum note,int octave)[] GuitarStrings =
+            {
+                (Note.NoteEnum.E,4),
+                (Note.NoteEnum.A,4),
+                (Note.NoteEnum.D,5),
+                (Note.NoteEnum.G,5),
+                (Note.NoteEnum.B,5),
+                (Note.NoteEnum.E,6)
+            };
         public enum NoteEnum{
             C,Cs,D,Ds,E,F,Fs,G,Gs,A,As,B
         }

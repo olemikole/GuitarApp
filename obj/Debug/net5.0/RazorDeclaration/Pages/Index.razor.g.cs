@@ -121,30 +121,30 @@ using GuitarApp.Models;
         {
             if((string)e.Value=="")
             {
-                _fretboardManager.currentKey=null;
+                _fretboardManager.CurrentKey=null;
             }
             else
-                _fretboardManager.currentKey = (Note.NoteEnum)Enum.Parse(typeof(Note.NoteEnum), e.Value.ToString().Replace("#","s"));
+                _fretboardManager.CurrentKey = (Note.NoteEnum)Enum.Parse(typeof(Note.NoteEnum), e.Value.ToString());
             _fretboardManager.UpdateNotes();
-            _fretboard.UpdateBoard(_fretboardManager.allNotes);
+            _fretboard.UpdateBoard(_fretboardManager.AllNotes);
         }
         public void OnScaleChanged(ChangeEventArgs e)
         {
             if(e.Value.ToString()=="")
             {
-                _fretboardManager.currentScale=new List<Note.NoteEnum>(){Note.NoteEnum.C};
+                _fretboardManager.CurrentScale=new List<Note.NoteEnum>(){Note.NoteEnum.C};
             }
             else
-                _fretboardManager.currentScale =_scales[ int.Parse( e.Value.ToString() ) ].ScaleNotes;
-            _fretboardManager.currentMode=0;
+                _fretboardManager.CurrentScale =_scales[ int.Parse( e.Value.ToString() ) ].ScaleNotes;
+            _fretboardManager.CurrentMode=0;
             _fretboardManager.UpdateNotes();
-            _fretboard.UpdateBoard(_fretboardManager.allNotes);
+            _fretboard.UpdateBoard(_fretboardManager.AllNotes);
         }
 
         public void OnModeChanged(ChangeEventArgs e){
-            _fretboardManager.currentMode = int.Parse(e.Value.ToString());
+            _fretboardManager.CurrentMode = int.Parse(e.Value.ToString());
             _fretboardManager.UpdateNotes();
-            _fretboard.UpdateBoard(_fretboardManager.allNotes);
+            _fretboard.UpdateBoard(_fretboardManager.AllNotes);
         }
 
     

@@ -74,39 +74,6 @@
         }
       },
       {
-        "HashCode": 691270471,
-        "Kind": "Components.Component",
-        "Name": "GuitarApp.Pages.Index",
-        "AssemblyName": "GuitarApp",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Index"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "GuitarApp.Pages.Index"
-        }
-      },
-      {
-        "HashCode": 1089624246,
-        "Kind": "Components.Component",
-        "Name": "GuitarApp.Pages.Index",
-        "AssemblyName": "GuitarApp",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "GuitarApp.Pages.Index"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "GuitarApp.Pages.Index",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
         "HashCode": 480603498,
         "Kind": "Components.Component",
         "Name": "GuitarApp.Shared.MainLayout",
@@ -199,6 +166,39 @@
           "Runtime.Name": "Components.None",
           "Common.TypeName": "GuitarApp.Shared.MainLayout.Body",
           "Components.IsSpecialKind": "Components.ChildContent",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 691270471,
+        "Kind": "Components.Component",
+        "Name": "GuitarApp.Pages.Index",
+        "AssemblyName": "GuitarApp",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Index"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "GuitarApp.Pages.Index"
+        }
+      },
+      {
+        "HashCode": 1089624246,
+        "Kind": "Components.Component",
+        "Name": "GuitarApp.Pages.Index",
+        "AssemblyName": "GuitarApp",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "GuitarApp.Pages.Index"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "GuitarApp.Pages.Index",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
