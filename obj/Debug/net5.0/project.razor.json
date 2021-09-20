@@ -41,39 +41,6 @@
         }
       },
       {
-        "HashCode": -2065607122,
-        "Kind": "Components.Component",
-        "Name": "GuitarApp.Components.Fretboard",
-        "AssemblyName": "GuitarApp",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Fretboard"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "GuitarApp.Components.Fretboard"
-        }
-      },
-      {
-        "HashCode": -241476439,
-        "Kind": "Components.Component",
-        "Name": "GuitarApp.Components.Fretboard",
-        "AssemblyName": "GuitarApp",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "GuitarApp.Components.Fretboard"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "GuitarApp.Components.Fretboard",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
         "HashCode": 480603498,
         "Kind": "Components.Component",
         "Name": "GuitarApp.Shared.MainLayout",
@@ -199,6 +166,39 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "GuitarApp.Pages.Index",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": -2065607122,
+        "Kind": "Components.Component",
+        "Name": "GuitarApp.Components.Fretboard",
+        "AssemblyName": "GuitarApp",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Fretboard"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "GuitarApp.Components.Fretboard"
+        }
+      },
+      {
+        "HashCode": -241476439,
+        "Kind": "Components.Component",
+        "Name": "GuitarApp.Components.Fretboard",
+        "AssemblyName": "GuitarApp",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "GuitarApp.Components.Fretboard"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "GuitarApp.Components.Fretboard",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },

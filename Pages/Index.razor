@@ -1,6 +1,7 @@
 ﻿@page "/"
 @inject HttpClient Http
 
+<div class="main">
 <h2>Guitar App</h2>
 
 
@@ -9,38 +10,40 @@
     <p><em>Loading...</em></p>
 }
 else{
-    <label>Key</label>
-    <select @onchange="OnKeyChanged">
-        <option></option>
-        @foreach (var item in Enum.GetValues(typeof(Note.NoteEnum)))
-        {
-            <option value=@item>
-                <td>@item.ToString().Replace("s","#")</td>
-            </option>
-        }
-    </select>
-    <label>Scale</label>
-    <select @onchange="OnScaleChanged">
-        <option></option>
-        @for (var i=0;i< _scales.Length; i++)
-        {
-            <option value=@i>
-                <td >@_scales[i].Name</td>
-            </option>
-        }
-    </select>
-    <label>Mode</label>
-    <select @onchange="OnModeChanged" >
-        @for(var i=0;i<_fretboardManager.CurrentScale.Count;i++)
-        {
-            <option value=@i>
-                <td>@(i+1)</td>
-            </option>
-        }
-    </select>
+    
+        <label>Key</label>
+        <select @onchange="OnKeyChanged">
+            <option></option>
+            @foreach (var item in Enum.GetValues(typeof(Note.NoteEnum)))
+            {
+                <option value=@item>
+                    <td>@item.ToString().Replace("s","#")</td>
+                </option>
+            }
+        </select>
+        <label>Scale</label>
+        <select @onchange="OnScaleChanged">
+            <option></option>
+            @for (var i=0;i< _scales.Length; i++)
+            {
+                <option value=@i>
+                    <td >@_scales[i].Name</td>
+                </option>
+            }
+        </select>
+        <label>Mode</label>
+        <select @onchange="OnModeChanged" >
+            @for(var i=0;i<_fretboardManager.CurrentScale.Count;i++)
+            {
+                <option value=@i>
+                    <td>@(i+1)</td>
+                </option>
+            }
+        </select>
 
-    <Fretboard @ref="_fretboard"/>
-    <h1></h1>
+        <Fretboard @ref="_fretboard"/>
+        
+    
     @code{
         FretboardManager _fretboardManager;
         private Scale[] _scales;
@@ -84,3 +87,5 @@ else{
 
     }
 }
+
+</div>

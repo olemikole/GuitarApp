@@ -105,7 +105,7 @@ using GuitarApp.Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 44 "C:\Users\olemi\Dev\C#\GuitarApp\Pages\Index.razor"
+#line 47 "C:\Users\olemi\Dev\C#\GuitarApp\Pages\Index.razor"
           
         FretboardManager _fretboardManager;
         private Scale[] _scales;

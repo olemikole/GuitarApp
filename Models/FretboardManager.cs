@@ -6,7 +6,7 @@ namespace GuitarApp.Models
 {
     public class FretboardManager
     {
-        const int NUMBER_OF_FRETS=12;
+        const int NUMBER_OF_FRETS=24;
         public Note[,] AllNotes = new Note[Note.GuitarStrings.Length,NUMBER_OF_FRETS];
         public List<Note.NoteEnum> CurrentScale=new List<Note.NoteEnum>(){Note.NoteEnum.C};
         public Note.NoteEnum? CurrentKey=null;
@@ -18,7 +18,7 @@ namespace GuitarApp.Models
 
             for(int i = 0; i < 6; i++)
             {
-                for(int j = 0; j < 12;j++)
+                for(int j = 0; j < NUMBER_OF_FRETS;j++)
                 {
                     AllNotes[i,j]=new Note(j,i);
                 }
@@ -44,7 +44,7 @@ namespace GuitarApp.Models
                 
                 if(scaleNotes.Contains(note.NoteValue))
                 {
-                    note.color = (note.NoteValue == CurrentKey) ? "red" : "#0066FF"; 
+                    note.color = (note.NoteValue == CurrentKey) ? "#bc2525" : "#127681"; 
                     
                 }
                 else

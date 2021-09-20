@@ -1,10 +1,16 @@
 .fretboard-container {
-    background-image: url(../Images/fretboard.png);
+    background-image: url(../Images/fretboard3.png);
     background-size: 100%;
     width: 1200px;
     height: 150px;
     position: absolute;
 
+}
+
+.main{
+    background-image: linear-gradient(180deg, rgb(196, 203, 218) 0%, #a48eaa 70%);
+    font-style: normal;
+    font-weight: 700;
 }
 
 .note {
@@ -13,6 +19,7 @@
     position: absolute;
     border-radius: 50%;
     display: inline-block;
+
 }
 
 
@@ -34,3 +41,4 @@
         right: 0.75rem;
         top: 0.5rem;
     }
+
